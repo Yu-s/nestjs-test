@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+
+  api:
+    container_name: ramchat-api
+    restart: always
+    image: nestjs/cli
+    working_dir: /app
+    volumes:
+      - ./:/app
+    expose:
+      - 4000
+    ports:
+      - 4000:4000
+    environment:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
+      AWS_REGION: ap-northeast-1
+      TZ: Asia/Tokyo
+    command: npm run start
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: ramchat-db
+    image: mysql:5.7
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql:cached
+      - ./mysql/conf:/etc/mysql/conf.d:cached
+    environment:
+      MYSQL_DATABASE: ramchat
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      BIND-ADDRESS: 0.0.0.0
+
+volumes:
+  node_modules:
+    driver: local
+  mysql-data:
+    driver: local
