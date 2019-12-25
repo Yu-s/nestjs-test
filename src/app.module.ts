@@ -9,7 +9,16 @@ import { Connection } from 'typeorm';
 @Module({
   imports: [
     UsersModule,
-    TypeOrmModule.forRoot(),
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: process.env.TYPEORM_HOST,
+      username: process.env.TYPEORM_USERNAME,
+      password: process.env.TYPEORM_PASSWORD,
+      port: 3306,
+      database: 'ramchat',
+      entities: [User],
+      synchronize: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
