@@ -6,6 +6,6 @@ WORKDIR /app
 
 EXPOSE 4000
 
-RUN npm run build
+RUN yarn build
 
 ENTRYPOINT exec node dist/main.js
