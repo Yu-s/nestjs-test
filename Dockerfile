@@ -6,7 +6,7 @@ WORKDIR /app
 
 EXPOSE 4000
 
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/ash", "-c"]
 
 RUN yarn build
 
