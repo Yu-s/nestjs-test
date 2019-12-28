@@ -11,7 +11,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - yarn build
+      - npm install
+      - npm run build
       - docker build -t nestjs-test .
       - docker tag nestjs-test 152341231368.dkr.ecr.ap-northeast-1.amazonaws.com/nestjs-test:latest
       - cd $CODEBUILD_SRC_DIR
