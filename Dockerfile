@@ -1,6 +1,6 @@
 FROM nestjs/cli
 
-COPY ./dist /app
+COPY ./dist /app/dist
 
 WORKDIR /app
 
