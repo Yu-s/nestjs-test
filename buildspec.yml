@@ -17,7 +17,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker tag nestjs-test:latest 152341231368.dkr.ecr.ap-northeast-1.amazonaws.com/nestjs-test:latest
+      - docker tag nestjs-test 152341231368.dkr.ecr.ap-northeast-1.amazonaws.com/nestjs-test:latest
       - docker push 152341231368.dkr.ecr.ap-northeast-1.amazonaws.com/nestjs-test:latest
       - echo Writing image definitions file...
       - printf '[{"name":"nestjs-test","imageUri":"%s"}]' 152341231368.dkr.ecr.ap-northeast-1.amazonaws.com/nestjs-test > imagedefinitions.json
