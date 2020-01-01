@@ -1,13 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm';
 
 @Entity()
 export class User {
   constructor(
     name,
     age,
+    mail,
   ) {
     this.name = name;
     this.age = age;
+    this.mail = mail;
   }
 
   @PrimaryGeneratedColumn()
@@ -18,4 +20,8 @@ export class User {
 
   @Column()
   age: number;
+
+  @Column()
+  @Index({ unique: true })
+  mail: string;
 }
