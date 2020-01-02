@@ -1,7 +1,5 @@
 import { Injectable, NestInterceptor, ExecutionContext, CallHandler, UnauthorizedException } from '@nestjs/common';
-import { Observable } from 'rxjs';
 import axios from 'axios';
-import { awaitExpression } from '@babel/types';
 
 @Injectable()
 export class AuthInterceptor implements NestInterceptor {
