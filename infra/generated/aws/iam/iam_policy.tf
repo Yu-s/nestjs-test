@@ -312,6 +312,28 @@ resource "aws_iam_policy" "tfer--CodeBuildBasePolicy-002D-nestjs-002D-api2-002D-
 POLICY
 }
 
+resource "aws_iam_policy" "tfer--ecs-002D-datadog-002D-execute-002D-policy" {
+  name = "ecs-datadog-execute-policy"
+  path = "/"
+
+  policy = <<POLICY
+{
+  "Statement": [
+    {
+      "Action": [
+        "ecs:ListClusters",
+        "ecs:ListContainerInstances",
+        "ecs:DescribeContainerInstances"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}
+POLICY
+}
+
 resource "aws_iam_policy" "tfer--start-002D-pipeline-002D-execution-002D-ap-002D-northeast-002D-1-002D-nestjs-002D-api" {
   description = "Allows Amazon CloudWatch Events to automatically start a new execution in the nestjs-api pipeline when a change occurs"
   name        = "start-pipeline-execution-ap-northeast-1-nestjs-api"

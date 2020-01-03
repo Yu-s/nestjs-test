@@ -21,6 +21,12 @@ resource "aws_iam_policy_attachment" "tfer--CodeBuildBasePolicy-002D-nestjs-002D
   roles      = ["codebuild-nestjs-api"]
 }
 
+resource "aws_iam_policy_attachment" "tfer--ecs-002D-datadog-002D-execute-002D-policy" {
+  name       = "ecs-datadog-execute-policy"
+  policy_arn = "arn:aws:iam::152341231368:policy/ecs-datadog-execute-policy"
+  roles      = ["ecsTaskExecutionRole"]
+}
+
 resource "aws_iam_policy_attachment" "tfer--start-002D-pipeline-002D-execution-002D-ap-002D-northeast-002D-1-002D-nestjs-002D-api" {
   name       = "start-pipeline-execution-ap-northeast-1-nestjs-api"
   policy_arn = "arn:aws:iam::152341231368:policy/service-role/start-pipeline-execution-ap-northeast-1-nestjs-api"

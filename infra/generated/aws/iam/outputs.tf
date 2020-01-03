@@ -14,6 +14,10 @@ output "aws_iam_policy_attachment_tfer--CodeBuildBasePolicy-002D-nestjs-002D-api
   value = "${aws_iam_policy_attachment.tfer--CodeBuildBasePolicy-002D-nestjs-002D-api2-002D-ap-002D-northeast-002D-1.id}"
 }
 
+output "aws_iam_policy_attachment_tfer--ecs-002D-datadog-002D-execute-002D-policy_id" {
+  value = "${aws_iam_policy_attachment.tfer--ecs-002D-datadog-002D-execute-002D-policy.id}"
+}
+
 output "aws_iam_policy_attachment_tfer--start-002D-pipeline-002D-execution-002D-ap-002D-northeast-002D-1-002D-nestjs-002D-api_id" {
   value = "${aws_iam_policy_attachment.tfer--start-002D-pipeline-002D-execution-002D-ap-002D-northeast-002D-1-002D-nestjs-002D-api.id}"
 }
@@ -34,8 +38,16 @@ output "aws_iam_policy_tfer--CodeBuildBasePolicy-002D-nestjs-002D-api2-002D-ap-0
   value = "${aws_iam_policy.tfer--CodeBuildBasePolicy-002D-nestjs-002D-api2-002D-ap-002D-northeast-002D-1.id}"
 }
 
+output "aws_iam_policy_tfer--ecs-002D-datadog-002D-execute-002D-policy_id" {
+  value = "${aws_iam_policy.tfer--ecs-002D-datadog-002D-execute-002D-policy.id}"
+}
+
 output "aws_iam_policy_tfer--start-002D-pipeline-002D-execution-002D-ap-002D-northeast-002D-1-002D-nestjs-002D-api_id" {
   value = "${aws_iam_policy.tfer--start-002D-pipeline-002D-execution-002D-ap-002D-northeast-002D-1-002D-nestjs-002D-api.id}"
+}
+
+output "aws_iam_role_policy_tfer--AmazonSSMRoleForAutomationAssumeQuickSetup_SsmOnboardingInlinePolicy_id" {
+  value = "${aws_iam_role_policy.tfer--AmazonSSMRoleForAutomationAssumeQuickSetup_SsmOnboardingInlinePolicy.id}"
 }
 
 output "aws_iam_user_tfer--AIDASG6B6W4ENASQCICHX_id" {
