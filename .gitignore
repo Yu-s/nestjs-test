@@ -35,5 +35,7 @@ nest-test-command
 !.vscode/extensions.json
 
 # infra
+infra/.terraformer
+infra/.terraformer/*
 infra/.terraform
 infra/.terraform/*
